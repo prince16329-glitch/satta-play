@@ -96,13 +96,13 @@ const SattaDashboard = () => {
               </p>
               <p>♕♕ &nbsp;SAMEER BHAI KHAIWAL &nbsp;♕♕</p>
               <p>
-                <Link href="https://wa.me/+917206591251">
+                <Link target="_blank" href="https://wa.me/+917206591251">
                   Game play करने के लिये नीचे लिंक पर क्लिक करे
                 </Link>
               </p>
               <p>&nbsp;</p>
               <div className="mx-auto max-w-[300px]">
-                <Link href="https://wa.me/+919817050720">
+                <Link target="_blank" href="https://wa.me/+919817050720">
                   <Image
                     width={300}
                     height={100}
