@@ -31,7 +31,7 @@ const ChartTwo = () => {
                 key={link.id}
                 className="bg-gradient2 flex items-center justify-center text-nowrap px-6 py-2.5 leading-0 rounded-xs cursor-pointer hover:transform transition"
               >
-                <p className="text-base underline m-0 font-semibold uppercase text-black">
+                <p className="text-base underline hover:no-underline m-0 font-semibold uppercase text-black">
                   {link.title}
                 </p>
               </Link>
