@@ -2,15 +2,15 @@ import Link from "next/link";
 
 const ChartTwo = () => {
   const sattaLinks = [
-    { id: 1, title: "DISAWER YEARLY CHART2024", href: "/" },
-    { id: 2, title: "SHRI GANESH YEARLY 2024", href: "/" },
-    { id: 3, title: "GAZIYABAD YEARLY CHART2024", href: "/" },
-    { id: 4, title: "IPL YEARLY CHART2024", href: "/" },
-    { id: 5, title: "FARIDABAD YEARLY CHART2024", href: "/" },
-    { id: 6, title: " VARANASI  YEARLY CHART2024", href: "/" },
-    { id: 7, title: "SIKANDERPUR YEARLY CHART2024", href: "/" },
-    { id: 8, title: "SURYA YEARLY CHART2024", href: "/" },
-    { id: 9, title: "GALI YEARLY CHART2024", href: "/" },
+    { id: 1, title: "DISAWER YEARLY CHART2024", href: "/Disawer2024" },
+    { id: 2, title: "SHRI GANESH YEARLY 2024", href: "/Ganesh" },
+    { id: 3, title: "GAZIYABAD YEARLY CHART2024", href: "/Gaziyabad" },
+    { id: 4, title: "IPL YEARLY CHART2024", href: "/Ipl" },
+    { id: 5, title: "FARIDABAD YEARLY CHART2024", href: "/Faridabad" },
+    { id: 6, title: " VARANASI  YEARLY CHART2024", href: "/Varanasi" },
+    { id: 7, title: "SIKANDERPUR YEARLY CHART2024", href: "/Sikanderpur" },
+    { id: 8, title: "SURYA YEARLY CHART2024", href: "/Surya" },
+    { id: 9, title: "GALI YEARLY CHART2024", href: "Gali" },
     { id: 10, title: "DELHI BAZAR YEARLY CHART2024", href: "/Delhi2024" },
   ];
 
