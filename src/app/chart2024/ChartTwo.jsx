@@ -11,7 +11,7 @@ const ChartTwo = () => {
     { id: 7, title: "SIKANDERPUR YEARLY CHART2024", href: "/" },
     { id: 8, title: "SURYA YEARLY CHART2024", href: "/" },
     { id: 9, title: "GALI YEARLY CHART2024", href: "/" },
-    { id: 10, title: "DELHI BAZAR YEARLY CHART2024", href: "/" },
+    { id: 10, title: "DELHI BAZAR YEARLY CHART2024", href: "/Delhi2024" },
   ];
 
   return (

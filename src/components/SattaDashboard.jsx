@@ -33,7 +33,7 @@ const SattaDashboard = () => {
         {/* Current Featured Game */}
         <div className="rounded-xl text-center">
           <div className="bg-gradientmidyellow3 px-2 pt-20 pb-8 sm:pb-16 lg:py-24">
-            <h2 className="sm:text-4xl lg:text-5xl text-3xl animate-[once] animate-bounce font-semibold  mt-24 text-theme-accent">
+            <h2 className="sm:text-4xl lg:text-5xl text-3xl animate-bounce font-semibold  mt-24 text-theme-accent">
               B1 SATTA
             </h2>
           </div>
@@ -180,7 +180,7 @@ const SattaDashboard = () => {
                             key={gameIndex}
                             className="border border-theme-primary px-3 py-2 text-center text-black text-sm"
                           >
-                            -
+                            XX
                           </td>
                         ))}
                       </tr>

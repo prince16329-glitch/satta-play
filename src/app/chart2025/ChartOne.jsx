@@ -2,16 +2,16 @@ import Link from "next/link";
 
 const ChartOne = () => {
   const sattaLinks = [
-    { id: 1, title: "DISAWER YEARLY CHART2025", href: "/" },
-    { id: 2, title: "SHRI GANESH YEARLY 2025", href: "/" },
-    { id: 3, title: "GAZIYABAD YEARLY CHART2025", href: "/" },
-    { id: 4, title: "IPL YEARLY CHART2025", href: "/" },
-    { id: 5, title: "FARIDABAD YEARLY CHART2025", href: "/" },
-    { id: 6, title: " VARANASI  YEARLY CHART2025", href: "/" },
-    { id: 7, title: "SIKANDERPUR YEARLY CHART2025", href: "/" },
-    { id: 8, title: "SURYA YEARLY CHART2025", href: "/" },
-    { id: 9, title: "GALI YEARLY CHART2025", href: "/" },
-    { id: 10, title: "DELHI BAZAR YEARLY CHART2025", href: "/" },
+    { id: 1, title: "DISAWER YEARLY CHART2025", href: "/Disawer2025" },
+    { id: 2, title: "SHRI GANESH YEARLY 2025", href: "/Ganesh2025" },
+    { id: 3, title: "GAZIYABAD YEARLY CHART2025", href: "/Gaziyabad2025" },
+    { id: 4, title: "IPL YEARLY CHART2025", href: "/Ipl2025" },
+    { id: 5, title: "FARIDABAD YEARLY CHART2025", href: "/Faridabad2025" },
+    { id: 6, title: " VARANASI  YEARLY CHART2025", href: "/Varanasi2025" },
+    { id: 7, title: "SIKANDERPUR YEARLY CHART2025", href: "/Sikandarpur2025" },
+    { id: 8, title: "SURYA YEARLY CHART2025", href: "/Surya2025" },
+    { id: 9, title: "GALI YEARLY CHART2025", href: "/Gali2025" },
+    { id: 10, title: "DELHI BAZAR YEARLY CHART2025", href: "/Delhi2025" },
   ];
 
   return (

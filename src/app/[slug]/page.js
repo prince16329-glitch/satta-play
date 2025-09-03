@@ -1,17 +1,21 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+"use client";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const DynamicTable = () => {
-  const router = useRouter();
-  const { slug } = router.query;
+  const { slug } = useParams(); // ✅ slug yahan se milega
   const [tableData, setTableData] = useState([]);
 
   useEffect(() => {
     if (slug) {
-      // Simulate fetching data based on slug
       const fetchData = async () => {
-        const data = await fetch(`/api/data?slug=${slug}`).then((res) => res.json());
-        setTableData(data);
+        try {
+          const res = await fetch(`/api/data?slug=${slug}`);
+          const data = await res.json();
+          setTableData(data);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
       };
       fetchData();
     }
@@ -20,7 +24,7 @@ const DynamicTable = () => {
   return (
     <div>
       <h1>Data for: {slug}</h1>
-      <table>
+      <table border="1" cellPadding="8">
         <thead>
           <tr>
             <th>ID</th>
@@ -29,13 +33,19 @@ const DynamicTable = () => {
           </tr>
         </thead>
         <tbody>
-          {tableData.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.value}</td>
+          {tableData.length > 0 ? (
+            tableData.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.value}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="3">No data found</td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </div>
