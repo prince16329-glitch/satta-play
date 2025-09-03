@@ -15,8 +15,8 @@ const ChartTwo = () => {
   ];
 
   return (
-    <div className=" mt-16 py-4">
-      <h1 className=" bg-gradientredblack pb-3 text-[22px] text-white font-medium text-center pt-6">
+    <div className=" mt-16 max-sm:mt-24 max-sm:pt-8 py-4">
+      <h1 className=" bg-gradientredblack pb-3 text-[22px] text-white font-medium text-center px-3 pt-6">
         A1-satta provides all kind of satta king results everyday.
       </h1>
       <h1 className="capitalize bg-gradient2 text-3xl py-3 text-white font-semibold text-center">
@@ -24,7 +24,7 @@ const ChartTwo = () => {
       </h1>
       <div className="bg-gradientredblack2">
         <div className="container mx-auto px-4 py-5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center justify-center max-sm:gap-3 max-md:gap-4 gap-5">
             {sattaLinks.map((link) => (
               <Link
                 href={link.href}

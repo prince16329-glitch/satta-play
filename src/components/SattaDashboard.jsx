@@ -32,8 +32,8 @@ const SattaDashboard = () => {
       <div className="mx-auto bg-gradient">
         {/* Current Featured Game */}
         <div className="rounded-xl text-center">
-          <div className="bg-gradientmidyellow3 px-2 py-20 lg:py-24">
-            <h2 className="sm:text-4xl lg:text-5xl text-3xl font-semibold mt-10 text-theme-accent">
+          <div className="bg-gradientmidyellow3 px-2 pt-20 pb-8 sm:pb-16 lg:py-24">
+            <h2 className="sm:text-4xl lg:text-5xl text-3xl font-semibold  mt-24 text-theme-accent">
               B1 SATTA
             </h2>
           </div>
