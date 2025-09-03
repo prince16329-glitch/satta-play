@@ -96,9 +96,9 @@ const SattaDashboard = () => {
               </p>
               <p>♕♕ &nbsp;SAMEER BHAI KHAIWAL &nbsp;♕♕</p>
               <p>
-                <a href="https://wa.me/+917206591251">
+                <Link href="https://wa.me/+917206591251">
                   Game play करने के लिये नीचे लिंक पर क्लिक करे
-                </a>
+                </Link>
               </p>
               <p>&nbsp;</p>
               <div className="mx-auto max-w-[300px]">
