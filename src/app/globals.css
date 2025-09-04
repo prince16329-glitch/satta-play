@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @theme inline {
   --color-primary: 220 38 127; /* Deep purple */
@@ -35,4 +36,9 @@
 .bg-gradientredblack2 {
   background-color: transparent;
   background-image: radial-gradient(at center center, #1d1717 55%, #f2295b 77%);
+}
+.roboto{
+  font-size: larger;
+  font-weight: 700;
+  font-family: "ROBOTO",sans-serif;
 }

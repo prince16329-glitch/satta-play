@@ -179,7 +179,7 @@ const SattaResultTable = () => {
             {sattaGames.map((game) => (
               <tr key={game.id}>
                 {/* Game Name Cell */}
-                <td className="py-2 text-center text-white border border-gray-800 bg-gradient flex">
+                <td className="py-2 px-2 text-center text-white border border-gray-800 bg-gradient flex">
                   <p className="text-sm font-bold text-black w-full md:text-lg mt-1 text-center">
                     {game.displayName} {game.time}
                   </p>

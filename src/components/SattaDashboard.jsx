@@ -32,16 +32,16 @@ const SattaDashboard = () => {
       <div className="mx-auto bg-gradient">
         {/* Current Featured Game */}
         <div className="rounded-xl text-center">
-          <div className="bg-gradientmidyellow3 px-2 pt-20 pb-8 sm:pb-16 lg:py-24">
-            <h2 className="sm:text-4xl lg:text-5xl text-3xl animate-bounce font-semibold  mt-24 text-theme-accent">
+          <div className="bg-gradientmidyellow3 px-2 pt-20 pb-8">
+            <h2 className="text-4xl lg:text-5xl animate-bounce font-semibold  mt-24 text-theme-accent">
               B1 SATTA
             </h2>
+            <p className="text-black pb-12 mt-10 px-4 text-2xl md:text-3xl font-semibold">
+              यही आती हे सबसे पहले खबर रूको और देखो
+              <br />
+              SUPER FAST RESULTS
+            </p>
           </div>
-          <p className="text-black sm:pb-12 pb-10 md:pb-16 lg:pb-20 px-4 pt-2 bg-gradientmidyellow text-2xl md:text-3xl font-semibold">
-            यही आती हे सबसे पहले खबर रूको और देखो
-            <br />
-            SUPER FAST RESULTS
-          </p>
         </div>
         <div className="bg-white py-2">
           <hr className="border-dashed max-w-5xl mx-auto my-3" />
@@ -59,7 +59,7 @@ const SattaDashboard = () => {
         <section className="flex flex-col md:flex-row md:space-x-1 bg-white">
           <div className="text-center w-full">
             <div className="bg-gradient py-2.5 m-0 font-semibold">
-              <p className="text-4xl max-sm:text-2xl">
+              <p className="text-4xl max-sm:text-lg mt-2 mb-0 md:my-5 max-md:text-2xl">
                 --सीधे सट्टा कंपनी का No 1 खाईवाल--
               </p>
             </div>
@@ -104,6 +104,7 @@ const SattaDashboard = () => {
               <div className="mx-auto max-w-[300px]">
                 <Link target="_blank" href="https://wa.me/+919817050720">
                   <Image
+                    className="max-sm:w-[200px] mx-auto max-sm:h-14"
                     width={300}
                     height={100}
                     src="https://i.ibb.co/4RJCLbSB/whatsapp.png"
@@ -116,22 +117,6 @@ const SattaDashboard = () => {
         </section>
 
         <SattaResultTable />
-        <div className="items-center justify-center flex">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            overflow="visible"
-            height="40px"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-            strokeLinecap="square"
-            strokeMiterlimit="10"
-          >
-            <path d="M0,6c6,0,0.9,11.1,6.9,11.1S18,6,24,6" />
-          </svg>
-        </div>
         {/* Chart Grid */}
         <div>
           <div className="bg-gradient p-6 text-center">
@@ -139,7 +124,7 @@ const SattaDashboard = () => {
               <h2 className="sm:text-4xl lg:text-5xl text-2xl font-bold text-theme-accent mb-2 md:mb-6">
                 SEPTEMBER MONTHLY CHART
               </h2>
-              <p className="text-black text-2xl md:text-3xl lg:text-4xl font-bold">
+              <p className="text-black text-2xl sm:text-4xl lg:text-5xl font-bold">
                 2025
               </p>
             </div>
@@ -192,6 +177,19 @@ const SattaDashboard = () => {
           </div>
         </div>
       </div>
+      <Link
+        className="fixed bottom-10 right-10"
+        target="_blank"
+        href="https://wa.me/+919817050720"
+      >
+        <Image
+          className="animate-pulse"
+          width={70}
+          height={70}
+          src="https://i.ibb.co/x8fsyXVj/Whats-App-svg.webp"
+          alt="whatsapp"
+        />
+      </Link>
     </div>
   );
 };
