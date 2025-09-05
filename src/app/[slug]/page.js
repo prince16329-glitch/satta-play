@@ -2,60 +2,31 @@
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import NotFound from "../NotFound";
+import Heading from "@/components/common/Heading";
+import YearlyTable from "@/components/YearlyTable";
 
 const DynamicTable = () => {
   const { slug } = useParams();
   const [tableData, setTableData] = useState(null);
   const [error, setError] = useState(false);
-
-  useEffect(() => {
-    if (slug) {
-      const fetchData = async () => {
-        try {
-          const res = await fetch(`/api/data?slug=${slug}`);
-          if (!res.ok) {
-            setError(true);
-            return;
-          }
-          const data = await res.json();
-          if (!data || data.length === 0) {
-            setError(true);
-            return;
-          }
-          setTableData(data);
-        } catch (e) {
-          setError(true);
-        }
-      };
-      fetchData();
-    }
-  }, [slug]);
+  console.log(slug, "slug")
+  const yearlyData = {
+    JAN: { 1: 84, 2: "08", 3: "10" },
+    FEB: { 1: 99, 2: 50, 3: 20 },
+    MAR: { 1: 46, 2: 35, 3: 45 },
+  };
 
   if (error) return <NotFound />; // ✅ custom not-found render hoga
+   const title = slug.toUpperCase().replace(/-/g, " ");
 
-  if (!tableData) return <p>Loading...</p>;
+  // if (!tableData) return <p>Loading...</p>;
 
   return (
     <div>
-      <h1>Data for: {slug}</h1>
-      <table border="1" cellPadding="8">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tableData.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.value}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <Heading title={title} />
+      <div className="container mx-auto px-4 py-6">
+        <YearlyTable year="2025" data={yearlyData} />
+      </div>
     </div>
   );
 };
