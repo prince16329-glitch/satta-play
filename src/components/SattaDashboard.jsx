@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import SattaResultTable from "./SattaResultTable";
 import { useEffect, useState } from "react";
+import GameSection from "./GameSection";
 
 const SattaDashboard = () => {
   const gameResults = [
@@ -43,79 +44,8 @@ const SattaDashboard = () => {
             </p>
           </div>
         </div>
-        <div className="bg-white py-2">
-          <hr className="border-dashed max-w-5xl mx-auto my-3" />
-          <div className="mx-auto font-semibold gap-4 grid py-5 md:grid-cols-3 max-w-6xl items-center">
-            <div className="flex lg:text-5xl text-4xl item-center justify-center">
-              LIVE RESULT
-            </div>
-            <div className="flex text-2xl item-center justify-center">
-              SURYA
-            </div>
-            <div className="flex text-2xl item-center justify-center">71</div>
-          </div>
-        </div>
 
-        <section className="flex flex-col md:flex-row md:space-x-1 bg-white">
-          <div className="text-center w-full">
-            <div className="bg-gradient py-2.5 m-0 font-semibold">
-              <p className="text-4xl max-sm:text-lg mt-2 mb-0 md:my-5 max-md:text-2xl">
-                --सीधे सट्टा कंपनी का No 1 खाईवाल--
-              </p>
-            </div>
-            <div className="flex-1 px-2 pt-4 pb-4 text-base font-semibold leading-6 text-gray-900 min-h-1 bg-gradient">
-              <p>♕♕&nbsp;DEV BHAI ONLINE KHAIWAL ♕♕</p>
-              <p>⏰ सदर बाजार ------------ &nbsp;1:20 PM</p>
-              <p>⏰ ग्वालियर --------------- 2:20 PM</p>
-              <p>⏰ दिल्ली मटका ----------- 3:20 PM</p>
-              <p>⏰ श्री गणेश -------------- 4:20 PM</p>
-              <p>⏰ आगरा -----------------5:20 PM</p>
-              <p>⏰ फरीदाबाद ------------- &nbsp;5:50 PM</p>
-              <p>⏰ अलवर -----------------7:20 PM</p>
-              <p>⏰ गाज़ियाबाद ------------- 8:50 PM</p>
-              <p>⏰ द्वारका -----------------10:15 PM</p>
-              <p>⏰ गली ------------------ 11:20 PM</p>
-              <p>⏰ दिसावर --------------- &nbsp;1:30 AM</p>
-              <p>
-                💸 Payment Option 💸
-                <br />
-                <br />
-                PAYTM//BANK TRANSFER//PHONE PAY//GOOGLE PAY =&lt; ⏺️9996252688⏺️
-                <br />
-                ==========================
-                <br />
-                ==========================
-              </p>
-              <p>
-                🤑Rate list💸
-                <br />
-                <br />
-                जोड़ी रेट 10-------960
-                <br />
-                हरूफ रेट 100-----960
-              </p>
-              <p>♕♕ &nbsp;SAMEER BHAI KHAIWAL &nbsp;♕♕</p>
-              <p>
-                <Link target="_blank" href="https://wa.me/+917206591251">
-                  Game play करने के लिये नीचे लिंक पर क्लिक करे
-                </Link>
-              </p>
-              <p>&nbsp;</p>
-              <div className="mx-auto max-w-[300px]">
-                <Link target="_blank" href="https://wa.me/+919817050720">
-                  <Image
-                    className="max-sm:w-[200px] mx-auto max-sm:h-14"
-                    width={300}
-                    height={100}
-                    src="https://i.ibb.co/4RJCLbSB/whatsapp.png"
-                    alt="whatsapp"
-                  />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <GameSection />
         <SattaResultTable />
         {/* Chart Grid */}
         <div>
@@ -190,6 +120,16 @@ const SattaDashboard = () => {
           alt="whatsapp"
         />
       </Link>
+      <p className="max-w-[1140px] text-center mx-auto mt-4 pb-4">
+        !! DISCLAIMER :-{" "}
+        <span className="text-blue-500">http:/sattaplay.in</span> is a
+        non-commercial website. Viewing This Website Is Your Own Risk, All The
+        Information Shown On Website Is Sponsored And We Warn You That Matka
+        Gambling/Satta May Be Banned Or Illegal In Your Country ... , We Are Not
+        Responsible For Any Issues Or Scam ... , We Respect All Country
+        Rules/Laws ... If You Not Agree With Our Site Disclaimer ... Please Quit
+        Our Site Right Now. Thank You.
+      </p>
     </div>
   );
 };

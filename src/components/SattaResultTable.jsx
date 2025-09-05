@@ -156,55 +156,54 @@ const SattaResultTable = () => {
   };
 
   return (
-    <article className="p-0">
-      <div className="relative p-0 overflow-x-auto">
-        <table className="w-full text-sm text-left text-gray-500 border-collapse border-gray-400">
-          {/* Table Header */}
-          <thead className="text-base text-white bg-gradientredblack">
-            <tr>
-              <th className="text-center border border-gray-800 py-3 w-[37%]">
-                सट्टा का नाम
-              </th>
-              <th className="py-3 text-center border border-gray-800">
-                कल आया था
-              </th>
-              <th className="py-3 text-center border border-gray-800">
-                आज का रिज़ल्ट
-              </th>
-            </tr>
-          </thead>
-
-          {/* Table Body - Using map for repetitive rows */}
-          <tbody>
-            {sattaGames.map((game) => (
-              <tr key={game.id}>
-                {/* Game Name Cell */}
-                <td className="py-2 px-2 text-center text-white border border-gray-800 bg-gradient flex">
-                  <p className="text-sm font-bold text-black w-full md:text-lg mt-1 text-center">
-                    {game.displayName} {game.time}
-                  </p>
-                </td>
-
-                {/* Yesterday Result Cell */}
-                <td className="text-center bg-white border border-gray-800 yesterday-number">
-                  <div className="text-2xl font-bold tracking-widest text-black">
-                    {game.yesterdayResult}
-                  </div>
-                </td>
-
-                {/* Today Result Cell */}
-                <td className="text-center bg-white border border-gray-800 today-number">
-                  <ResultCell
-                    result={game.todayResult}
-                    isLoading={game.isLoading}
-                  />
-                </td>
+    <>
+      <article className="p-0">
+        <div className="relative p-0 overflow-x-auto">
+          <table className="w-full text-sm text-left text-gray-500 border-collapse border-gray-400">
+            {/* Table Header */}
+            <thead className="text-base text-white bg-gradientredblack">
+              <tr>
+                <th className="text-center border border-gray-800 py-3 w-[37%]">
+                  सट्टा का नाम
+                </th>
+                <th className="py-3 text-center border border-gray-800">
+                  कल आया था
+                </th>
+                <th className="py-3 text-center border border-gray-800">
+                  आज का रिज़ल्ट
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </article>          
+            </thead>
+            {/* Table Body - Using map for repetitive rows */}
+            <tbody>
+              {sattaGames.map((game) => (
+                <tr key={game.id}>
+                  {/* Game Name Cell */}
+                  <td className="py-2 px-2 text-center text-white border border-gray-800 bg-gradient flex">
+                    <p className="text-sm font-bold text-black w-full md:text-lg mt-1 text-center">
+                      {game.displayName} {game.time}
+                    </p>
+                  </td>
+                  {/* Yesterday Result Cell */}
+                  <td className="text-center bg-white border border-gray-800 yesterday-number">
+                    <div className="text-2xl font-bold tracking-widest text-black">
+                      {game.yesterdayResult}
+                    </div>
+                  </td>
+                  {/* Today Result Cell */}
+                  <td className="text-center bg-white border border-gray-800 today-number">
+                    <ResultCell
+                      result={game.todayResult}
+                      isLoading={game.isLoading}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </>
   );
 };
 
