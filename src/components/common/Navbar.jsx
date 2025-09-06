@@ -58,7 +58,7 @@ const Navbar = () => {
               <Link
                 href={link.href}
                 key={link.id}
-                className="bg-gradientredblack text-center hover:-translate-y-1 flex items-center justify-center px-4 sm:px-5 md:px-6 py-3 rounded cursor-pointer transition"
+                className="bg-gradientredblack text-center hover:-translate-y-1 flex items-center justify-center px-4 sm:px-5 md:px-6 py-2 sm:py-3 rounded cursor-pointer transition"
               >
                 <p className="text-base max-sm:text-sm m-0 font-bold uppercase text-white">
                   {link.title}

@@ -87,13 +87,13 @@ const SattaDashboard = () => {
                           rowIndex % 2 !== 0 ? "bg-gray-200" : ""
                         }`}
                       >
-                        <td className="border border-theme-primary px-3 py-2 text-center text-black bg-yellow-300 text-sm font-medium sticky left-0 z-10">
+                        <td className="border border-theme-primary px-3 py-2 text-center text-black bg-yellow-300 border-r border-black text-sm font-medium sticky left-0 z-10">
                           {rowIndex + 1}
                         </td>
                         {gameResults.slice(0, 10).map((_, gameIndex) => (
                           <td
                             key={gameIndex}
-                            className="border border-theme-primary px-3 py-2 text-center text-black text-sm"
+                            className="border border-theme-primary px-3 py-2  text-center text-black text-sm"
                           >
                             XX
                           </td>

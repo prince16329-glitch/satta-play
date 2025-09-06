@@ -143,9 +143,9 @@ const GameSection = () => {
     <>
       {/* === TOP DYNAMIC SECTION === */}
       <div className="bg-white pt-2">
-        <p className="text-center mt-2">
+        <div className="text-center mt-2">
           <DateTime />
-        </p>
+        </div>
         <hr className="border-dashed w-full mx-auto my-3" />
 
         <div className="flex text-2xl sm:text-3xl md:text-4xl mx-auto text-center w-full font-semibold flex-col gap-5 item-center justify-center">
@@ -222,6 +222,7 @@ const GameSection = () => {
                   <span className="flex items-center gap-1 text-nowrap">
                     ⏰ {game.name}
                   </span>
+                  <span>---------</span>
                   {/* Right side: time */}
                   <span className="text-nowrap">{game.time}</span>
                 </div>

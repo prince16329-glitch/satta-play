@@ -15,7 +15,7 @@ const ChartTwo = () => {
   ];
 
   return (
-    <div className=" mt-16 max-sm:mt-24 max-sm:pt-8 py-4">
+    <div className="mt-20 min-[494px]:mt-14 py-4">
       <h1 className=" bg-gradientredblack pb-3 text-[22px] text-white font-medium text-center px-3 pt-6">
         A1-satta provides all kind of satta king results everyday.
       </h1>
