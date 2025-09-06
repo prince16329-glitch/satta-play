@@ -66,7 +66,7 @@ const SattaDashboard = () => {
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="bg-yellow-300">
-                      <th className="border border-theme-primary px-3 py-2 text-black text-sm sticky left-0 bg-yellow-300 z-10">
+                      <th className="outline px-3 py-2 text-black text-sm sticky left-0 bg-yellow-300 z-10">
                         S.No
                       </th>
                       {gameResults.slice(0, 10).map((game, index) => (
@@ -87,7 +87,7 @@ const SattaDashboard = () => {
                           rowIndex % 2 !== 0 ? "bg-gray-200" : ""
                         }`}
                       >
-                        <td className="border border-theme-primary px-3 py-2 text-center text-black bg-yellow-300 border-r border-black text-sm font-medium sticky left-0 z-10">
+                        <td className="px-3 py-2 text-center text-black bg-yellow-300 outline text-sm font-medium sticky left-0 z-10">
                           {rowIndex + 1}
                         </td>
                         {gameResults.slice(0, 10).map((_, gameIndex) => (
@@ -108,12 +108,12 @@ const SattaDashboard = () => {
         </div>
       </div>
       <Link
-        className="fixed bottom-10 right-10"
+        className="fixed bottom-6 right-6"
         target="_blank"
         href="https://wa.me/+919817050720"
       >
         <Image
-          className="animate-pulse"
+          className="animate-pulse max-sm:!size-14"
           width={70}
           height={70}
           src="https://i.ibb.co/x8fsyXVj/Whats-App-svg.webp"
