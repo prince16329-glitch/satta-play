@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import TopProgressBar from "@/components/TopProgressBar";
+import Link from "next/link";
+import Image from "next/image";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,8 +26,31 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <TopProgressBar/>
+        <TopProgressBar />
         <Navbar />
+        <Link
+          className="fixed bottom-6 right-6"
+          target="_blank"
+          href="https://wa.me/+919817050720"
+        >
+          <Image
+            className="animate-pulse max-sm:!size-14"
+            width={70}
+            height={70}
+            src="https://i.ibb.co/x8fsyXVj/Whats-App-svg.webp"
+            alt="whatsapp"
+          />
+        </Link>
+        <p className="max-w-[1140px] text-center mx-auto mt-4 px-3 pb-4">
+          !! DISCLAIMER :-{" "}
+          <span className="text-blue-500">http:/sattaplay.in</span> is a
+          non-commercial website. Viewing This Website Is Your Own Risk, All The
+          Information Shown On Website Is Sponsored And We Warn You That Matka
+          Gambling/Satta May Be Banned Or Illegal In Your Country ... , We Are
+          Not Responsible For Any Issues Or Scam ... , We Respect All Country
+          Rules/Laws ... If You Not Agree With Our Site Disclaimer ... Please
+          Quit Our Site Right Now. Thank You.
+        </p>
       </body>
     </html>
   );

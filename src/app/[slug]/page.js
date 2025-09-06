@@ -24,7 +24,7 @@ const DynamicTable = () => {
   return (
     <div>
       <Heading title={title} />
-      <div className="container mx-auto px-4 py-6">
+      <div className="mx-auto px-4 py-6">
         <YearlyTable year="2025" data={yearlyData} />
       </div>
     </div>
