@@ -83,7 +83,7 @@ const SattaDashboard = () => {
                     {Array.from({ length: 30 }, (_, rowIndex) => (
                       <tr
                         key={rowIndex}
-                        className={`hover:bg-yellow-100 transition-colors ${
+                        className={` ${
                           rowIndex % 2 !== 0 ? "bg-gray-200" : ""
                         }`}
                       >
@@ -93,7 +93,7 @@ const SattaDashboard = () => {
                         {gameResults.slice(0, 10).map((_, gameIndex) => (
                           <td
                             key={gameIndex}
-                            className="border border-theme-primary px-3 py-2  text-center text-black text-sm"
+                            className="border border-theme-primary px-3 py-2 hover:bg-yellow-100 transition-colors text-center text-black text-sm"
                           >
                             XX
                           </td>

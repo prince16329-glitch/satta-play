@@ -179,23 +179,30 @@ const GameSection = () => {
         {highlightGame && (
           <div className="bg-gradient2 mt-4 p-3 text-center w-full mx-auto">
             {/* Place Name */}
-            <p className="text-2xl font-bold mb-2">{highlightGame.name}</p>
+            <p className="text-3xl font-black mb-4">दिसावर</p>
 
-            <div className="flex items-center justify-between max-w-[350px] mx-auto">
+            <div className="flex items-center gap-3 justify-center max-w-[350px] mx-auto">
               {/* Previous Day Number */}
-              <span className="flex-1 text-lg font-semibold">
+              <span className="text-xl font-semibold">
                 {highlightGame.prevNumber}
               </span>
 
               {/* Arrow */}
-              <span className="px-3 py-1 bg-green-500 text-white rounded-full mx-2">
-                ➡
+              <span className="px-1 border bg-green-500 border-white text-white rounded-md mx-2">
+                 ➜
               </span>
 
               {/* Today Number (WAITING case handle) */}
-              <span className="flex-1 text-lg font-semibold text-blue-600">
+              <span className="text-xl font-semibold">
                 {nextGame && nextGame.name === highlightGame.name
-                  ? "WAITING"
+                  ? <Image
+                    className="mx-auto -mt-2"
+                    alt="wait icon"
+                    width={40}
+                    height={40}
+                    src="https://b1sattaplay.in/wp-content/uploads/2024/07/d.gif"
+                    priority={false}
+                  />
                   : highlightGame.todayNumber}
               </span>
             </div>
@@ -211,7 +218,7 @@ const GameSection = () => {
               --सीधे सट्टा कंपनी का No 1 खाईवाल--
             </p>
           </div>
-          <div className="flex-1 px-2 pt-4 pb-4 text-base font-semibold leading-6 text-gray-900 min-h-1 bg-gradient">
+          <div className="flex-1 px-2 pt-4 pb-6 text-base font-semibold leading-6 text-gray-900 min-h-1 bg-gradient">
             <div className="text-start mx-auto max-w-[300px]">
               {schedule.map((game, index) => (
                 <div
@@ -251,7 +258,7 @@ const GameSection = () => {
                 Game play करने के लिये नीचे लिंक पर क्लिक करे
               </Link>
             </p>
-            <div className="mx-auto max-w-[300px] mt-4">
+            <div className="mx-auto max-w-[300px] mt-4 hover:scale-110 transition-all duration-300">
               <Link target="_blank" href="https://wa.me/+919817050720">
                 <Image
                   className="max-sm:w-[200px] mx-auto max-sm:h-16"
