@@ -51,7 +51,7 @@ const SattaDashboard = () => {
         <div>
           <div className="bg-gradient p-6 text-center">
             <div className="">
-              <h2 className="sm:text-4xl lg:text-5xl text-2xl font-bold text-theme-accent mb-2 md:mb-6">
+              <h2 className="sm:text-4xl lg:text-5xl text-xl font-bold text-theme-accent mb-2 md:mb-6">
                 SEPTEMBER MONTHLY CHART
               </h2>
               <p className="text-black text-2xl sm:text-4xl lg:text-5xl font-bold">

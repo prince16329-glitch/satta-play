@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
             alt="whatsapp"
           />
         </Link>
-        <p className="max-w-[1140px] text-center mx-auto mt-4 px-3 pb-4 sm:text-base text-sm font-medium">
+        <p className="max-w-[1140px] text-center mx-auto mt-4 px-3 pb-4 sm:text-base text-xs font-medium">
           !! DISCLAIMER :-{" "}
           <Link href="http:/sattaplay.in" className="text-[#f2295be9] font-bold hover:text-[#f2295b]">http:/sattaplay.in</Link> is a
           non-commercial website. Viewing This Website Is Your Own Risk, All The
