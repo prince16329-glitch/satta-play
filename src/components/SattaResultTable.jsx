@@ -1,31 +1,17 @@
 import React from "react";
 import Image from "next/image";
+import { GAMES, GAME_MAPPING } from "@/utils/gameConfig";
 
 const SattaResultTable = ({ todayResults = [], yesterdayResults = [] }) => {
-  // City mapping with Sanity values
-  const cityMapping = {
-    sadar_bazaar: { displayName: "सदर बाजार", time: "12:15 PM" },
-    gwalior: { displayName: "ग्वालियर", time: "12:30 PM" },
-    delhi_matka: { displayName: "दिल्ली मटका", time: "12:35 PM" },
-    shri_ganesh: { displayName: "श्री गणेश", time: "1:45 PM" },
-    agra: { displayName: "आगरा", time: "2:10 PM" },
-    faridabad: { displayName: "फरीदाबाद", time: "3:15 PM" },
-    alwar: { displayName: "अलवर", time: "3:40 PM" },
-    ghaziabad: { displayName: "गाज़ियाबाद", time: "7:20 PM" },
-    dwarka: { displayName: "द्वारका", time: "8:10 PM" },
-    gali: { displayName: "गली", time: "8:15 PM" },
-    disawar: { displayName: "दिसावर", time: "9:50 PM" },
-  };
-
-  // Create games array from city mapping
-  const sattaGames = Object.entries(cityMapping).map(([cityKey, cityInfo], index) => {
-    const todayResult = todayResults.find(r => r.city === cityKey)?.resultNumber;
-    const yesterdayResult = yesterdayResults.find(r => r.city === cityKey)?.resultNumber;
+  // Create games array from centralized config
+  const sattaGames = GAMES.map((game, index) => {
+    const todayResult = todayResults.find(r => r.game === game.key)?.resultNumber;
+    const yesterdayResult = yesterdayResults.find(r => r.game === game.key)?.resultNumber;
 
     return {
       id: index + 1,
-      displayName: cityInfo.displayName,
-      time: cityInfo.time,
+      displayName: game.name,
+      time: game.time,
       yesterdayResult: yesterdayResult || "--",
       todayResult: todayResult,
       isLoading: !todayResult,
@@ -69,17 +55,17 @@ const SattaResultTable = ({ todayResults = [], yesterdayResults = [] }) => {
             <thead className="text-base text-white bg-gradientredblack">
               <tr>
                 <th className="text-center border border-gray-800 py-3 w-[37%]">
-                  सट्टा का नाम
+                  GAME NAME
                 </th>
                 <th className="py-3 text-center border border-gray-800">
-                  कल आया था
+                  YESTERDAY
                 </th>
                 <th className="py-3 text-center border border-gray-800">
-                  आज का रिज़ल्ट
+                  TODAY RESULT
                 </th>
               </tr>
             </thead>
-            {/* Table Body - Using map for repetitive rows */}
+            {/* Table Body */}
             <tbody>
               {sattaGames.map((game) => (
                 <tr key={game.id}>
@@ -97,7 +83,7 @@ const SattaResultTable = ({ todayResults = [], yesterdayResults = [] }) => {
                   </td>
                   {/* Today Result Cell */}
                   <td className="text-center bg-white border border-gray-800 today-number">
-                    <ResultCell 
+                    <ResultCell
                       result={game.todayResult}
                       isLoading={game.isLoading}
                     />

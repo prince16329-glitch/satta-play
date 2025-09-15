@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import DateTime from "./DateTime";
@@ -15,57 +14,9 @@ const GameSection = ({ data, setting, disawarData }) => {
     { name: "GAZIYABAD ", time: "08:55 PM", number: "90" },
     { name: "VARANASI", time: "09:55 PM", number: "75" },
     { name: "GALI ", time: "11:20 PM", number: "41" },
-    { name: "DISAWER ", time: "04:30 AM", number: "11" },
+    { name: "DISAWAR ", time: "04:30 AM", number: "11" },
   ];
 
-  const [prevGame, setPrevGame] = useState(null);
-  const [nextGame, setNextGame] = useState(null);
-
-  // Convert "HH:MM AM/PM" to total minutes
-  const getMinutes = (time) => {
-    let [h, rest] = time.split(":");
-    let [m, period] = rest.split(" ");
-    h = parseInt(h);
-    m = parseInt(m);
-    if (period === "PM" && h !== 12) h += 12;
-    if (period === "AM" && h === 12) h = 0;
-    let totalMinutes = h * 60 + m;
-    if (h < 5) totalMinutes += 24 * 60; // Early morning as next day
-    return totalMinutes;
-  };
-
-  useEffect(() => {
-    const checkGame = () => {
-      const now = new Date();
-      let currentMinutes = now.getHours() * 60 + now.getMinutes();
-      if (currentMinutes < 5 * 60) currentMinutes += 24 * 60;
-
-      const sortedSchedule = [...schedule].sort(
-        (a, b) => getMinutes(a.time) - getMinutes(b.time)
-      );
-
-      let activeIndex = -1;
-      for (let i = 0; i < sortedSchedule.length; i++) {
-        const thisTime = getMinutes(sortedSchedule[i].time);
-        const nextTime = getMinutes(
-          sortedSchedule[(i + 1) % sortedSchedule.length].time
-        );
-        if (currentMinutes >= thisTime && currentMinutes < nextTime) {
-          activeIndex = i;
-          break;
-        }
-      }
-
-      if (activeIndex === -1) activeIndex = sortedSchedule.length - 1;
-
-      setPrevGame(sortedSchedule[activeIndex]);
-      setNextGame(sortedSchedule[(activeIndex + 1) % sortedSchedule.length]);
-    };
-
-    checkGame();
-    const interval = setInterval(checkGame, 60000);
-    return () => clearInterval(interval);
-  }, []);
   return (
     <>
       {/* === TOP DYNAMIC SECTION === */}
@@ -75,18 +26,18 @@ const GameSection = ({ data, setting, disawarData }) => {
         </div>
         <hr className="border-dashed w-full mx-auto my-3" />
 
-        <div className="flex text-2xl capitalize sm:text-3xl md:text-4xl mx-auto text-center w-full font-semibold flex-col gap-5 item-center justify-center">
+        <div className="flex text-2xl uppercase sm:text-3xl md:text-4xl mx-auto text-center w-full font-semibold flex-col gap-5 item-center justify-center">
           {/* ✅ Previous game */}
           {data && (
             <>
-              <p>{data.city}</p>
+              <p>{data.game}</p>
               <p className="text-xl sm:text-2xl md:text-3xl">
                 {data.resultNumber}
               </p>
 
               {/* ✅ Next game (WAITING) */}
 
-              <p>{data.waitingCity}</p>
+              <p>{data.waitingGame}</p>
               <Image
                 className="mx-auto -mt-2"
                 alt="wait icon"
@@ -100,7 +51,7 @@ const GameSection = ({ data, setting, disawarData }) => {
         </div>
       </div>
       <div className="bg-gradient2 p-3 text-center w-full mx-auto">
-        <p className="text-3xl font-black mb-4">दिसावर</p>
+        <p className="text-3xl font-extrabold mb-4 uppercase">Disawar</p>
         <div className="flex items-center gap-3 justify-center max-w-[350px] mx-auto">
           <span className="text-xl font-semibold">
             {disawarData?.yesterday || "--"}
@@ -129,6 +80,7 @@ const GameSection = ({ data, setting, disawarData }) => {
             </p>
           </div>
           <div className="flex-1 px-2 pt-4 pb-6 text-base font-semibold leading-6 text-gray-900 min-h-1 bg-gradient">
+          <p className="uppercase mb-2 font-bold text-base lg:text-xl">♕♕ &nbsp;{setting?.contactName} BHAI KHAIWAL &nbsp;♕♕</p>
             <div className="text-start mx-auto max-w-[300px]">
               {schedule.map((game, index) => (
                 <div
@@ -146,7 +98,7 @@ const GameSection = ({ data, setting, disawarData }) => {
 
             <p className="mt-5 text-xl">💸 Payment Option 💸</p>
             <p>
-              PAYTM//BANK TRANSFER//PHONE PAY//GOOGLE PAY =&gt; ⏺️9996252688⏺️
+              PAYTM//BANK TRANSFER//PHONE PAY//GOOGLE PAY =&gt; ⏺️{setting?.paymentNumber}⏺️
               <br />
               ==========================
               <br />
@@ -156,9 +108,9 @@ const GameSection = ({ data, setting, disawarData }) => {
               🤑Rate list💸
               <br />
               <br />
-              जोड़ी रेट 10-------960
+              जोड़ी रेट 10-------{setting?.rate}
               <br />
-              हरूफ रेट 100-----960
+              हरूफ रेट 100-----{setting?.rate}
             </p>
             <p className="uppercase">♕♕ &nbsp;{setting?.contactName} BHAI KHAIWAL &nbsp;♕♕</p>
             <p>

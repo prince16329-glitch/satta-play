@@ -1,19 +1,12 @@
 import Link from "next/link";
+import { GAMES } from "@/utils/gameConfig";
 
 const ChartOne = () => {
-  const sattaLinks = [
-    { id: 1, title: "SADAR BAZAAR YEARLY CHART 2025" },
-    { id: 2, title: "GWALIOR YEARLY CHART 2025" },
-    { id: 3, title: "DELHI MATKA YEARLY CHART 2025" },
-    { id: 4, title: "SHRI GANESH YEARLY CHART 2025" },
-    { id: 5, title: "AGRA YEARLY CHART 2025" },
-    { id: 6, title: "FARIDABAD YEARLY CHART 2025" },
-    { id: 7, title: "ALWAR YEARLY CHART 2025" },
-    { id: 8, title: "GHAZIABAD YEARLY CHART 2025" },
-    { id: 9, title: "DWARKA YEARLY CHART 2025" },
-    { id: 10, title: "GALI YEARLY CHART 2025" },
-    { id: 11, title: "DISAWAR YEARLY CHART 2025" },
-  ];
+  const sattaLinks = GAMES.map(game => ({
+    id: game.order,
+    title: `${game.name} YEARLY CHART 2025`,
+    href: `${game.key.replace('_', '-')}-yearly-chart-2025`
+  }));
 
   return (
     <div className="mt-14 py-4 h-full">
@@ -29,7 +22,7 @@ const ChartOne = () => {
             {sattaLinks.map((link) => (
               <Link
                 key={link.id}
-                href={link.title.toLowerCase().replace(/\s+/g, "-")}
+                href={link.href}
                 className="bg-gradient2 flex items-center justify-center hover:underline underline-offset-2 duration-300 text-nowrap px-6 py-2.5 rounded-xs cursor-pointer hover:transform transition-all"
               >
                 <p className="text-base max-sm:text-sm m-0 font-semibold uppercase text-black">
