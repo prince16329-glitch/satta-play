@@ -3,29 +3,62 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import SattaResultTable from "./SattaResultTable";
-import { useEffect, useState } from "react";
 import GameSection from "./GameSection";
 
-const SattaDashboard = () => {
-  const gameResults = [
-    { name: "DISAWER", time: "05:00AM", result: "32" },
-    { name: "IPL", time: "06:30AM", result: "89" },
-    { name: "SIKNDRPUR", time: "07:15AM", result: "52" },
-    { name: "DELHI BAZAR", time: "08:00AM", result: "00" },
-    { name: "SHRI GANESH", time: "08:45AM", result: "18" },
-    { name: "FARIDABAD", time: "09:30AM", result: "67" },
-    { name: "SURYA", time: "10:15AM", result: "56" },
-    { name: "GAZIABAD", time: "09:30PM", result: "01" },
-    { name: "VARANASI", time: "10:05PM", result: "93" },
-    { name: "GALI", time: "11:00PM", result: "71" },
+const SattaDashboard = ({
+  todayResults = [],
+  yesterdayResults = [],
+  lastResult,
+  setting,
+  monthlyResults = [],
+  disawarData
+}) => {
+  // City names for monthly chart (using Hindi names from Sanity)
+  const cityNames = [
+    "सदर बाजार", "ग्वालियर", "दिल्ली मटका", "श्री गणेश", "आगरा",
+    "फरीदाबाद", "अलवर", "गाज़ियाबाद", "द्वारका", "गली", "दिसावर"
   ];
 
-  const chartNumbers = [
-    ["64", "70", "71", "64"],
-    ["32", "89", "52", "00"],
-    ["18", "67", "56", "01"],
-    ["93", "71", "64", "90"],
-  ];
+  // Create monthly chart data
+  const createMonthlyChart = () => {
+    const daysInMonth = 31; // September has 30, but using 31 for now
+    const rows = [];
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const row = { day };
+      cityNames.forEach((cityName, index) => {
+        const cityKey = Object.keys({
+          sadar_bazaar: "सदर बाजार",
+          gwalior: "ग्वालियर",
+          delhi_matka: "दिल्ली मटका",
+          shri_ganesh: "श्री गणेश",
+          agra: "आगरा",
+          faridabad: "फरीदाबाद",
+          alwar: "अलवर",
+          ghaziabad: "गाज़ियाबाद",
+          dwarka: "द्वारका",
+          gali: "गली",
+          disawar: "दिसावर"
+        })[index];
+
+        // Find result for this day and city
+        const dayStr = `2025-09-${String(day).padStart(2, '0')}`;
+        const result = monthlyResults.find(r =>
+          r.date === dayStr &&
+          Object.keys({
+            sadar_bazaar: 0, gwalior: 1, delhi_matka: 2, shri_ganesh: 3, agra: 4,
+            faridabad: 5, alwar: 6, ghaziabad: 7, dwarka: 8, gali: 9, disawar: 10
+          }).indexOf(r.city) === index
+        );
+
+        row[`city${index}`] = result ? result.resultNumber : "--  ";
+      });
+      rows.push(row);
+    }
+    return rows;
+  };
+
+  const monthlyChartData = createMonthlyChart();
 
   return (
     <div className="min-h-screen">
@@ -45,8 +78,12 @@ const SattaDashboard = () => {
           </div>
         </div>
 
-        <GameSection />
-        <SattaResultTable />
+        <GameSection data={lastResult} setting={setting} disawarData={disawarData} />
+        <SattaResultTable
+          todayResults={todayResults}
+          yesterdayResults={yesterdayResults}
+        />
+
         {/* Chart Grid */}
         <div>
           <div className="bg-gradient p-6 text-center">
@@ -69,33 +106,31 @@ const SattaDashboard = () => {
                       <th className="outline px-3 py-2 text-black text-sm sticky left-0 bg-yellow-300 z-10">
                         S.No
                       </th>
-                      {gameResults.slice(0, 10).map((game, index) => (
+                      {cityNames.map((cityName, index) => (
                         <th
                           key={index}
                           className="border border-theme-primary px-3 py-2 text-black text-xs"
                         >
-                          {game.name}
+                          {cityName}
                         </th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
-                    {Array.from({ length: 30 }, (_, rowIndex) => (
+                    {monthlyChartData.map((row, rowIndex) => (
                       <tr
                         key={rowIndex}
-                        className={` ${
-                          rowIndex % 2 !== 0 ? "bg-gray-200" : ""
-                        }`}
+                        className={` ${rowIndex % 2 !== 0 ? "bg-gray-200" : ""}`}
                       >
                         <td className="px-3 py-2 text-center text-black bg-yellow-300 outline text-sm font-medium sticky left-0 z-10">
                           {rowIndex + 1}
                         </td>
-                        {gameResults.slice(0, 10).map((_, gameIndex) => (
+                        {cityNames.map((_, cityIndex) => (
                           <td
-                            key={gameIndex}
+                            key={cityIndex}
                             className="border border-theme-primary px-3 py-2 hover:bg-yellow-100 transition-colors text-center text-black text-sm"
                           >
-                            XX
+                            {row[`city${cityIndex}`]}
                           </td>
                         ))}
                       </tr>

@@ -45,7 +45,7 @@ const YearlyTable = ({ year, data }) => {
               </td>
               {months.map((month, idx) => (
                 <td key={idx} className="border px-3 py-2 text-gray-700">
-                  {data[month]?.[day] || "xx"}
+                  {data[month]?.[day] || "--"}
                 </td>
               ))}
             </tr>

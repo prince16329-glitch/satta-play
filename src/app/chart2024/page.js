@@ -1,4 +1,5 @@
 import React from "react";
+import ChartOne from "./ChartTwo";
 import ChartTwo from "./ChartTwo";
 
 const page = () => {
