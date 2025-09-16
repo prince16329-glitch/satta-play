@@ -267,28 +267,28 @@ const AdminDashboard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <div className="bg-gradientmidyellow3 w-10 h-10 rounded-lg flex items-center justify-center mr-4">
+              <div className="bg-gradientmidyellow3 sm:size-10 size-8 rounded-lg flex items-center justify-center mr-2 sm:mr-3">
                 <div className="text-white font-bold">A</div>
               </div>
               <div>
-                <h1 className="roboto text-white text-xl">Admin Dashboard</h1>
-                <p className="text-white/60 text-sm">Welcome back, {user.username}</p>
+                <h1 className="roboto text-white text-base sm:text-xl">Admin Panel</h1>
+                <p className="text-white/60 sm:text-sm text-xs">Welcome back, {user.username}</p>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center sm:space-x-3">
               <button
                 onClick={() => setShowConfig(true)}
-                className="flex items-center text-white/80 hover:text-white px-4 py-2 rounded-lg hover:bg-white/10 transition-colors"
+                className="flex items-center text-white/80 hover:text-white gap-2 max-sm:text-sm px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
               >
-                <Settings size={18} className="mr-2" />
+                <Settings size={16} />
                 Site Config
               </button>
               <button
                 onClick={logout}
-                className="flex items-center text-white/80 hover:text-white px-4 py-2 rounded-lg hover:bg-white/10 transition-colors"
+                className="flex items-center text-white/80 hover:text-white px-2 sm:px-3 py-2 rounded-lg gap-2 hover:bg-white/10 transition-colors"
               >
-                <LogOut size={18} className="mr-2" />
-                Logout
+                <LogOut size={16} />
+               <span className='max-sm:hidden'>Logout</span> 
               </button>
             </div>
           </div>
@@ -497,7 +497,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* Bulk Import Section */}
-        <div className="bg-white/15 backdrop-blur-lg border border-white/20 rounded-2xl p-6 mt-8">
+        {/* <div className="bg-white/15 backdrop-blur-lg border border-white/20 rounded-2xl p-6 mt-8">
           <h2 className="roboto text-white text-xl mb-6">
             Bulk Import Historical Data
           </h2>
@@ -569,7 +569,7 @@ const AdminDashboard = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
