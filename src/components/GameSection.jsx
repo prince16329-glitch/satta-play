@@ -47,7 +47,6 @@ const GameSection = ({ data, setting, disawarData }) => {
               />
             </>
           )}
-
         </div>
       </div>
       <div className="bg-gradient2 p-3 text-center w-full mx-auto">
@@ -69,7 +68,8 @@ const GameSection = ({ data, setting, disawarData }) => {
                 src="https://b1sattaplay.in/wp-content/uploads/2024/07/d.gif"
               />
             )}
-          </span>        </div>
+          </span>
+        </div>
       </div>
       {/* === BOTTOM STATIC SECTION === */}
       <section className="flex flex-col md:flex-row md:space-x-1 bg-white">
@@ -80,7 +80,9 @@ const GameSection = ({ data, setting, disawarData }) => {
             </p>
           </div>
           <div className="flex-1 px-2 pt-4 pb-6 text-base font-semibold leading-6 text-gray-900 min-h-1 bg-gradient">
-          <p className="uppercase mb-2 font-bold text-base lg:text-xl">♕♕ &nbsp;{setting?.contactName} BHAI KHAIWAL &nbsp;♕♕</p>
+            <p className="uppercase mb-2 font-bold text-base lg:text-xl">
+              ♕♕ &nbsp;{setting?.contactName} BHAI KHAIWAL &nbsp;♕♕
+            </p>
             <div className="text-start mx-auto max-w-[300px]">
               {schedule.map((game, index) => (
                 <div
@@ -98,7 +100,8 @@ const GameSection = ({ data, setting, disawarData }) => {
 
             <p className="mt-5 text-xl">💸 Payment Option 💸</p>
             <p>
-              PAYTM//BANK TRANSFER//PHONE PAY//GOOGLE PAY =&gt; ⏺️{setting?.paymentNumber}⏺️
+              PAYTM//BANK TRANSFER//PHONE PAY//GOOGLE PAY =&gt; ⏺️
+              {setting?.paymentNumber}⏺️
               <br />
               ==========================
               <br />
@@ -112,14 +115,19 @@ const GameSection = ({ data, setting, disawarData }) => {
               <br />
               हरूफ रेट 100-----{setting?.rate}
             </p>
-            <p className="uppercase">♕♕ &nbsp;{setting?.contactName} BHAI KHAIWAL &nbsp;♕♕</p>
+            <p className="uppercase">
+              ♕♕ &nbsp;{setting?.contactName} BHAI KHAIWAL &nbsp;♕♕
+            </p>
             <p>
               <Link target="_blank" href="https://wa.me/+917206591251">
                 Game play करने के लिये नीचे लिंक पर क्लिक करे
               </Link>
             </p>
             <div className="mx-auto max-w-[300px] mt-4 hover:scale-110 transition-all duration-300">
-              <Link target="_blank" href={`https://wa.me/+${setting?.whatsappNumber}`}>
+              <Link
+                target="_blank"
+                href={`https://wa.me/+${setting?.whatsappNumber}`}
+              >
                 <Image
                   className="max-sm:w-[200px] mx-auto max-sm:h-16"
                   width={300}

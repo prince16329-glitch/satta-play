@@ -72,7 +72,8 @@ const SattaResultTable = ({ todayResults = [], yesterdayResults = [] }) => {
                   {/* Game Name Cell */}
                   <td className="py-2 px-2 text-center text-white border border-gray-800 bg-gradient flex">
                     <p className="text-sm font-bold text-black w-full md:text-lg mt-1 text-center">
-                      {game.displayName} {game.time}
+                      {game.displayName}
+                      <span className="max-[502px]:block">{game.time}</span>
                     </p>
                   </td>
                   {/* Yesterday Result Cell */}
