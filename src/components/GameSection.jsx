@@ -30,14 +30,14 @@ const GameSection = ({ data, setting, disawarData }) => {
           {/* ✅ Previous game */}
           {data && (
             <>
-              <p>{data.game}</p>
+              <p className="text-[#f2295b]">{data.game}</p>
               <p className="text-xl sm:text-2xl md:text-3xl">
                 {data.resultNumber}
               </p>
 
               {/* ✅ Next game (WAITING) */}
 
-              <p>{data.waitingGame}</p>
+              <p className="text-[#f2295b]">{data.waitingGame}</p>
               <Image
                 className="mx-auto -mt-2"
                 alt="wait icon"
@@ -63,8 +63,8 @@ const GameSection = ({ data, setting, disawarData }) => {
               <Image
                 className="inline"
                 alt="wait icon"
-                width={20}
-                height={20}
+                width={28}
+                height={28}
                 src="https://b1sattaplay.in/wp-content/uploads/2024/07/d.gif"
               />
             )}
