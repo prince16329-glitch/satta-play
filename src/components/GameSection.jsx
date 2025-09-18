@@ -30,8 +30,8 @@ const GameSection = ({ data, setting, disawarData }) => {
           {/* ✅ Previous game */}
           {data && (
             <>
-              <p className="text-[#f2295b]">{data.game}</p>
-              <p className="text-xl sm:text-2xl md:text-3xl">
+              <p className="text-[#f2295b] text-3xl">{data.game}</p>
+              <p className="text-2xl md:text-3xl">
                 {data.resultNumber}
               </p>
 
