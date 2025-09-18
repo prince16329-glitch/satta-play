@@ -30,14 +30,14 @@ const GameSection = ({ data, setting, disawarData }) => {
           {/* ✅ Previous game */}
           {data && (
             <>
-              <p className="text-[#f2295b] text-3xl">{data.game}</p>
+              <p className="text-[#f2295b] text-3xl">{data.game.replace('_', ' ')}</p>
               <p className="text-2xl md:text-3xl">
                 {data.resultNumber}
               </p>
 
               {/* ✅ Next game (WAITING) */}
 
-              <p className="text-[#f2295b]">{data.waitingGame}</p>
+              <p className="text-[#f2295b]">{data.waitingGame.replace('_', ' ')}</p>
               <Image
                 className="mx-auto -mt-2"
                 alt="wait icon"
