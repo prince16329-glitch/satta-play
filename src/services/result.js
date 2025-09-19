@@ -107,7 +107,6 @@ export async function getDisawarData() {
 
   try {
     const result = await client.fetch(query, { today, yDate });
-    console.log("Disawar data fetched:", result); // Debug log
     return result;
   } catch (error) {
     console.error("Error fetching Disawar data:", error);

@@ -1,65 +1,66 @@
 
 export const GAMES = [
-  { 
+  {
+    key: "disawar",
+    name: "DISAWAR",
+    time: "04:30 AM",
+    order: 10
+  },
+  {
     key: "ipl",
     name: "IPL",
     time: "12:55 PM",
     order: 1
   },
-  { 
+  {
     key: "sikanderpur",
     name: "SIKANDERPUR",
     time: "01:55 PM",
     order: 2
   },
-  { 
+  {
     key: "delhi_bazar",
     name: "DELHI BAZAR",
     time: "03:00 PM",
     order: 3
   },
-  { 
+  {
     key: "shri_ganesh",
     name: "SHRI GANESH",
     time: "04:30 PM",
     order: 4
   },
-  { 
+  {
     key: "faridabad",
     name: "FARIDABAD",
     time: "05:45 PM",
     order: 5
   },
-  { 
+  {
     key: "surya",
     name: "SURYA",
     time: "07:25 PM",
     order: 6
   },
-  { 
+  {
     key: "ghaziabad",
     name: "GHAZIABAD",
     time: "08:55 PM",
     order: 7
   },
-  { 
+  {
     key: "varanasi",
     name: "VARANASI",
     time: "09:55 PM",
     order: 8
   },
-  { 
+  {
     key: "gali",
     name: "GALI",
     time: "11:20 PM",
     order: 9
   },
-  { 
-    key: "disawar",
-    name: "DISAWAR",
-    time: "04:30 AM",
-    order: 10
-  }
+
 ];
 
 // Get game by key

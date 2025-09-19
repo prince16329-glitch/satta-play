@@ -40,7 +40,6 @@ export default async function Home() {
     rate: settings?.site1_rate || ''
   };
 
-  console.log(disawarData,"disawarData")
   return (
     <SattaDashboard
       todayResults={todayResults}

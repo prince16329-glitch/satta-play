@@ -215,7 +215,7 @@ const AdminDashboard = () => {
           else if (result.status === 'error') errors++;
         });
 
-        console.log(`Batch ${batchIndex + 1}/${totalBatches} completed - Imported: ${imported}, Skipped: ${skipped}, Errors: ${errors}`);
+        // console.log(`Batch ${batchIndex + 1}/${totalBatches} completed - Imported: ${imported}, Skipped: ${skipped}, Errors: ${errors}`);
 
         if (batchIndex < totalBatches - 1) {
           await new Promise(resolve => setTimeout(resolve, 200));
@@ -249,7 +249,7 @@ const AdminDashboard = () => {
 
   // Callback when site config is saved
   const onConfigSaved = () => {
-    console.log('Site configuration has been saved!');
+    // console.log('Site configuration has been saved!');
   };
 
   if (!user) {

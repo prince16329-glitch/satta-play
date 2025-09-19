@@ -5,6 +5,7 @@ import DateTime from "./DateTime";
 
 const GameSection = ({ data, setting, disawarData }) => {
   const schedule = [
+    { name: "DISAWAR ", time: "04:30 AM", number: "11" },
     { name: "IPL", time: "12:55 PM", number: "45" },
     { name: "SIKANDERPUR", time: "01:55 PM", number: "62" },
     { name: "DELHI BAZAR", time: "03:00 PM", number: "27" },
@@ -14,7 +15,6 @@ const GameSection = ({ data, setting, disawarData }) => {
     { name: "GAZIYABAD ", time: "08:55 PM", number: "90" },
     { name: "VARANASI", time: "09:55 PM", number: "75" },
     { name: "GALI ", time: "11:20 PM", number: "41" },
-    { name: "DISAWAR ", time: "04:30 AM", number: "11" },
   ];
 
   return (
