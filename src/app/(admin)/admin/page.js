@@ -12,13 +12,22 @@ import {
 import SiteConfig from '@/components/SiteConfig';
 import { GAMES, GAME_OPTIONS } from '@/utils/gameConfig';
 
+function getISTDateForForm() {
+  const date = new Date();
+  date.setTime(date.getTime() + (5.5 * 60 * 60 * 1000));
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(date.getUTCDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 const AdminDashboard = () => {
   const [results, setResults] = useState([]);
   const [formData, setFormData] = useState({
     game: '',
     resultNumber: '',
     waitingGame: '',
-    date: new Date().toLocaleDateString('en-CA')
+    date: getISTDateForForm()
 
   });
   const [editingId, setEditingId] = useState(null);
@@ -99,7 +108,7 @@ const AdminDashboard = () => {
         game: '',
         resultNumber: '',
         waitingGame: '',
-        date: new Date().toLocaleDateString('en-CA')
+        date: getISTDateForForm()
 
       });
       setEditingId(null);
@@ -149,7 +158,7 @@ const AdminDashboard = () => {
       game: '',
       resultNumber: '',
       waitingGame: '',
-      date: new Date().toLocaleDateString('en-CA')
+      date: getISTDateForForm()
 
     });
   };
@@ -288,7 +297,7 @@ const AdminDashboard = () => {
                 className="flex items-center text-white/80 hover:text-white px-2 sm:px-3 py-2 rounded-lg gap-2 hover:bg-white/10 transition-colors"
               >
                 <LogOut size={16} />
-               <span className='max-sm:hidden'>Logout</span> 
+                <span className='max-sm:hidden'>Logout</span>
               </button>
             </div>
           </div>

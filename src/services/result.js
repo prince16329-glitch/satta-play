@@ -22,6 +22,21 @@ export async function getSettings() {
   }
 }
 
+function getISTDate(daysOffset = 0) {
+  const date = new Date();
+  // Add IST offset (5.5 hours)
+  date.setTime(date.getTime() + (5.5 * 60 * 60 * 1000));
+  // Add/subtract days if needed
+  if (daysOffset !== 0) {
+    date.setDate(date.getDate() + daysOffset);
+  }
+  // Format as YYYY-MM-DD
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(date.getUTCDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 export async function updateSettings(settings) {
   try {
     const existingSettings = await client.fetch(`*[_type == "settings"][0]`);
@@ -45,14 +60,17 @@ export async function updateSettings(settings) {
 
 // ==================== RESULTS QUERIES ====================
 export async function getTodayResult() {
-  const today = new Date().toLocaleDateString('en-CA');
+  const today = getISTDate(); // Use IST date
+  console.log('Fetching results for:', today); // Debug log
+  
   const query = `*[_type == "result" && date == $today]{
     game,
     date,
     resultNumber
   }`;
+  
   try {
-    return await client.fetch(query, { today });
+    return await client.fetch(query, { today }, { cache: 'no-store' });
   } catch (error) {
     console.error("Error fetching today's results:", error);
     return [];
@@ -60,17 +78,17 @@ export async function getTodayResult() {
 }
 
 export async function getYesterdayResults() {
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  const yDate = yesterday.toLocaleDateString('en-CA');
-
+  const yDate = getISTDate(-1); // Yesterday in IST
+  console.log('Fetching yesterday results for:', yDate);
+  
   const query = `*[_type == "result" && date == $yDate]{
     game,
     date,
     resultNumber
   }`;
+  
   try {
-    return await client.fetch(query, { yDate });
+    return await client.fetch(query, { yDate }, { cache: 'no-store' });
   } catch (error) {
     console.error("Error fetching yesterday's results:", error);
     return [];
@@ -94,19 +112,21 @@ export async function getLastResult() {
   }
 }
 
-export async function getDisawarData() {
-  const today = new Date().toLocaleDateString('en-CA');
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  const yDate = yesterday.toLocaleDateString('en-CA');
 
+export async function getDisawarData() {
+  const today = getISTDate();
+  const yDate = getISTDate(-1);
+  
+  console.log('Fetching Disawar data for:', { today, yDate }); // Debug
+  
   const query = `{
-   "today": *[_type == "result" && lower(game) == "disawar" && date == $today][0].resultNumber,
-  "yesterday": *[_type == "result" && lower(game) == "disawar" && date == $yDate][0].resultNumber
+    "today": *[_type == "result" && game == "disawar" && date == $today][0].resultNumber,
+    "yesterday": *[_type == "result" && game == "disawar" && date == $yDate][0].resultNumber
   }`;
 
   try {
-    const result = await client.fetch(query, { today, yDate });
+    const result = await client.fetch(query, { today, yDate }, { cache: 'no-store' });
+    console.log('Disawar result:', result); // Debug
     return result;
   } catch (error) {
     console.error("Error fetching Disawar data:", error);
@@ -125,7 +145,7 @@ export async function getMonthlyResults(month, year) {
   } | order(date asc)`;
 
   try {
-    return await client.fetch(query, { start, end });
+    return await client.fetch(query, { start, end }, { cache: 'no-store' });
   } catch (error) {
     console.error("Error fetching monthly results:", error);
     return [];

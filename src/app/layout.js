@@ -1,9 +1,12 @@
-import { getSettings } from "@/services/result";
 import "./globals.css";
 
 export const metadata = {
   title: "Satta Play",
   description: "Satta Play",
+  icons: {
+    icon: '/favicon.ico',
+  },
+  viewport: { width: 'device-width', initialScale: 1 }
 };
 
 export default async function RootLayout({ children }) {

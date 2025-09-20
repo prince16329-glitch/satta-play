@@ -44,7 +44,7 @@ const SattaDashboard = ({
   };
 
   const monthlyChartData = createMonthlyChart();
-
+console.log(disawarData,"disawarData")
   return (
     <div className="min-h-screen">
       {/* Main Content */}
