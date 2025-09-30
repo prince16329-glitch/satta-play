@@ -43,7 +43,7 @@ const GameSection = ({ data, setting, disawarData }) => {
                 alt="wait icon"
                 width={40}
                 height={40}
-                src="https://i.ibb.co/HffXjQCh/wait.gif"
+                src="https://b1sattaplay.in/wp-content/uploads/2024/07/d.gif"
               />
             </>
           )}
@@ -65,7 +65,7 @@ const GameSection = ({ data, setting, disawarData }) => {
                 alt="wait icon"
                 width={28}
                 height={28}
-                src="https://i.ibb.co/HffXjQCh/wait.gif"
+                src="https://b1sattaplay.in/wp-content/uploads/2024/07/d.gif"
               />
             )}
           </span>
