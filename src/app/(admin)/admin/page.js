@@ -469,7 +469,7 @@ const AdminDashboard = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Add/Edit Form */}
-          <div className="bg-white/15 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
+          <div className="bg-white/15 backdrop-blur-lg border border-white/20 rounded-2xl sm:p-6 p-4">
             <h2 className="roboto text-white text-xl mb-6 flex items-center">
               <Plus size={20} className="mr-2" />
               {editingId ? "Edit Result" : "Add New Result"}
@@ -751,7 +751,7 @@ const AdminDashboard = () => {
               </div>
             ) : (
               <>
-                <div className="space-y-3 max-h-96 p-1 overflow-y-auto">
+                <div className="space-y-3 max-h-96 overflow-y-auto">
                   {currentResults.length === 0 ? (
                     <div className="text-center text-white/60 py-8">
                       {hasActiveFilters ? (
@@ -779,7 +779,7 @@ const AdminDashboard = () => {
                     currentResults.map((item) => (
                       <div
                         key={item._id}
-                        className={`bg-white/10 rounded-lg p-4 hover:bg-white/15 transition-colors ${editingId === item._id ? "ring-2 ring-purple-600" : ""}`}
+                        className={`bg-white/10 rounded-lg p-3 hover:bg-white/15 transition-colors ${editingId === item._id ? "ring-2 ring-purple-600" : ""}`}
                       >
                         <div className="flex justify-between items-start">
                           <div className="flex-1">
@@ -788,10 +788,10 @@ const AdminDashboard = () => {
                                 size={16}
                                 className="text-purple-600 mr-2"
                               />
-                              <span className="text-white font-medium">
+                              <span className="text-white font-medium text-sm sm:text-base">
                                 {getGameTitle(item.game)}
                               </span>
-                              <span className="ml-2 px-3 py-1 bg-gradient text-white text-sm font-bold rounded-full">
+                              <span className="ml-2 px-2 py-1 bg-gradient text-white text-sm font-bold rounded-full">
                                 {item.resultNumber}
                               </span>
                             </div>
@@ -813,17 +813,17 @@ const AdminDashboard = () => {
                               </span>
                             </div>
                           </div>
-                          <div className="flex space-x-2 ml-4">
+                          <div className="flex space-x-1 ml-2">
                             <button
                               onClick={() => handleEdit(item)}
-                              className="p-2 text-purple-600 hover:bg-purple-800/20 rounded-lg transition-colors"
+                              className="p-1.5 text-purple-600 hover:bg-purple-800/20 rounded-lg transition-colors"
                               disabled={loading}
                             >
                               <Edit size={16} />
                             </button>
                             <button
                               onClick={() => handleDelete(item._id)}
-                              className="p-2 text-purple-600 hover:bg-purple-800/20 rounded-lg transition-colors"
+                              className="p-1.5 text-purple-600 hover:bg-purple-800/20 rounded-lg transition-colors"
                               disabled={loading}
                             >
                               <Trash2 size={16} />
