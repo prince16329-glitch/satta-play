@@ -427,7 +427,7 @@ const AdminDashboard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <div className="bg-gradient w-10 h-10 rounded-lg flex items-center justify-center mr-4">
+              <div className="bg-gradient w-10 h-10 rounded-lg flex items-center justify-center mr-2">
                 <div className="text-white font-bold">A</div>
               </div>
               <div>
@@ -693,13 +693,13 @@ const AdminDashboard = () => {
                       setShowCurrentMonthOnly(false);
                     }
                   }}
-                  className="px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                  className="px-3 py-2 bg-white/10 w-full border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-600"
                   placeholder="Search by date"
                 />
                 <select
                   value={searchGame}
                   onChange={(e) => setSearchGame(e.target.value)}
-                  className="px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+                  className="px-3 py-2 bg-white/10 w-full border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
                 >
                   <option value="" className="text-black bg-white">All Games</option>
                   {GAME_OPTIONS.map((game) => (
@@ -721,7 +721,7 @@ const AdminDashboard = () => {
               </div>
               
               {/* Results per page selector */}
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center flex-wrap gap-1">
                 <span className="text-white/60 text-sm">
                   {showCurrentMonthOnly && !searchDate ? (
                     <span className="text-purple-400">Current month: </span>
