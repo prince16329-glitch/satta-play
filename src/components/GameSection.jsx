@@ -119,14 +119,14 @@ const GameSection = ({ data, setting, disawarData }) => {
               ♕♕ &nbsp;{setting?.contactName} BHAI KHAIWAL &nbsp;♕♕
             </p>
             <p>
-              <Link target="_blank" href="https://wa.me/+917206591251">
+              <Link target="_blank" href={`https://wa.me/+91${setting?.whatsappNumber}`}>
                 Game play करने के लिये नीचे लिंक पर क्लिक करे
               </Link>
             </p>
             <div className="mx-auto max-w-[300px] mt-4 hover:scale-110 transition-all duration-300">
               <Link
                 target="_blank"
-                href={`https://wa.me/+${setting?.whatsappNumber}`}
+                href={`https://wa.me/+91${setting?.whatsappNumber}`}
               >
                 <Image
                   className="max-sm:w-[200px] mx-auto max-sm:h-16"

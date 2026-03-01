@@ -114,7 +114,7 @@ const SiteConfig = ({ showConfig, setShowConfig, onConfigSaved }) => {
                                 WhatsApp Number
                             </label>
                             <input
-                                type="number"
+                                type="tel"
                                 value={siteConfig.site1_whatsappNumber || ''}
                                 onChange={(e) => setSiteConfig({ ...siteConfig, site1_whatsappNumber: e.target.value })}
                                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200"
@@ -176,7 +176,7 @@ const SiteConfig = ({ showConfig, setShowConfig, onConfigSaved }) => {
                                 WhatsApp Number
                             </label>
                             <input
-                                type="number"
+                                type="tel"
                                 value={siteConfig.site2_whatsappNumber || ''}
                                 onChange={(e) => setSiteConfig({ ...siteConfig, site2_whatsappNumber: e.target.value })}
                                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-200"
