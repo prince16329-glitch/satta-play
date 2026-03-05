@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "B1 Satta Play – Live Satta Results, Charts & Updates",
+  title: "B1-Satta Play – Live Satta Results, Charts & Updates",
   description:
     "B1 Satta Play provides fast and accurate live satta results, daily charts, and updates. Check B1 Satta Play charts 2024, 2025 and latest numbers here.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata = {
     canonical: "/",
   },
   verification: {
-    google: "JPqd3sjT4IdHPl6H6",
+    google: "JPqd3sjT4IdHPl6H6-okUN_cnpuFy2TV6k_Uu51h4bY",
   },
   openGraph: {
     title: "B1 Satta Play – Live Results & Charts",
